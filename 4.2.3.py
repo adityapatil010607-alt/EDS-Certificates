@@ -6,14 +6,11 @@ file_name = input()
 # Load the data
 df = pd.read_csv(file_name)
 
+# Group the data by 'City' and sum the 'Quantity' for each city
+city_sales = df.groupby('City')['Quantity'].sum()
 
-# Group the data by 'Product' and sum the 'Quantity' for each product
-product_sales = df.groupby('Product')['Quantity'].sum()
-
-# Find the product with the highest total quantity sold
-best_product = product_sales.idxmax()
-highest_quantity = product_sales.max()
+# Find the city that sold the most products
+best_city = city_sales.idxmax()
 
 # Display the result
-print(f"Best selling product: {best_product}")
-print(f"Total quantity sold: {highest_quantity}")
+print(f"City sold the most products: {best_city}")
