@@ -1,0 +1,6 @@
+date1=input()
+date2=input()
+d1=date.fromisoformat(date1)
+d2=date.fromisoformat(date2)
+diff=abs(d2-d1)
+print(diff.days)
